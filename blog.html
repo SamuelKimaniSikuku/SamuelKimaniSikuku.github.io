@@ -5,164 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Samuel Kimani Sikuku</title>
     <style>
-        * {
+        body {
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+            font-size: 13px;
+            color: #333;
+            line-height: 18px;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #FAFAFA;
-            color: #333;
-            line-height: 1.6;
-            padding: 40px 60px;
-        }
-
-        .nav {
-            position: fixed;
-            top: 40px;
-            right: 60px;
+        #menu {
+            float: right;
+            margin-top: 30px;
+            margin-right: 20px;
             text-align: right;
-            z-index: 100;
+            width: 150px;
         }
 
-        .nav .name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
+        #menu .title {
             margin-bottom: 10px;
         }
 
-        .nav a {
-            display: block;
-            color: #0066CC;
-            text-decoration: none;
-            font-size: 15px;
-            margin: 4px 0;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            max-width: 800px;
+        #menu ul {
+            list-style-type: none;
             margin: 0;
+            padding: 0;
         }
 
-        .filter {
-            font-size: 15px;
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 40px;
-        }
-
-        .blog-post {
-            margin-bottom: 50px;
-        }
-
-        .blog-post .meta {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .blog-post h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .blog-post h2 a {
-            color: #333;
+        #menu li a {
+            display: inline-block;
+            color: #0864c7;
             text-decoration: none;
         }
 
-        .blog-post h2 a:hover {
+        #menu li a:hover {
             text-decoration: underline;
         }
 
-        .blog-post img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin-top: 10px;
-            border-radius: 4px;
+        #left {
+            height: 1px;
+            float: left;
+            display: block;
+            min-width: 0;
+            overflow: hidden;
+            width: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            margin-top: 30px;
+            float: left;
+            width: 500px;
+        }
+
+        #content h1 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0 0 2em 0;
+        }
+
+        .post {
+            margin-bottom: 2.5em;
+        }
+
+        .post .byline {
+            font-size: 10px;
+            color: #aaa;
+            margin-bottom: 0.3em;
+        }
+
+        .post a {
+            color: #0864c7;
+            text-decoration: none;
+        }
+
+        .post a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 30px;
+            #menu {
+                float: none;
+                width: auto;
+                margin: 20px;
+                text-align: left;
             }
 
-            .nav {
-                position: static;
-                margin-bottom: 40px;
+            #left {
+                display: none;
+            }
+
+            #content {
+                float: none;
+                width: auto;
+                margin: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <div class="name">Samuel Kimani</div>
-        <a href="about.html">About</a>
-        <a href="links.html">Links</a>
-        <a href="blog.html">Blog</a>
-        <a href="travel.html">Travel</a>
-        <a href="people.html">People</a>
-        <a href="bookshelf.html">Bookshelf</a>
+    <div id="menu">
+        <div class="title">Samuel Kimani</div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="travel.html">Travel</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="bookshelf.html">Bookshelf</a></li>
+        </ul>
     </div>
-
-    <div class="content">
-        <div class="filter">All Posts</div>
-        
+    <div id="left"></div>
+    <div id="content">
         <h1>All Posts</h1>
 
-        <div class="blog-post">
-            <div class="meta">5 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/digital-money-technology-and-crypto-currency" target="_blank">Digital Money - Technology and Crypto currency</a></h2>
-            <img src="https://static.wixstatic.com/media/5eecb7_d7360bc6dad64da2bf39b8ca5e4744ae~mv2.png/v1/fill/w_600,h_450,fp_0.50_0.50,q_90,enc_avif,quality_auto/5eecb7_d7360bc6dad64da2bf39b8ca5e4744ae~mv2.webp" alt="Digital Money">
+        <div class="post">
+            <div class="byline">5 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/digital-money-technology-and-crypto-currency" target="_blank">Digital Money - Technology and Crypto currency</a>
         </div>
 
-        <div class="blog-post">
-            <div class="meta">4 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/beyond-trade-why-bitcoin-is-not-a-scam-part-2" target="_blank">Beyond Trade - Why Bitcoin is not a scam part- 2</a></h2>
+        <div class="post">
+            <div class="byline">4 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/beyond-trade-why-bitcoin-is-not-a-scam-part-2" target="_blank">Beyond Trade - Why Bitcoin is not a scam part- 2</a>
         </div>
 
-        <div class="blog-post">
-            <div class="meta">3 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/why-bitcoin-is-not-a-scam-understanding-money-part-1" target="_blank">Why Bitcoin is not a scam - Understanding Money - Part 1</a></h2>
-            <img src="https://static.wixstatic.com/media/5eecb7_61c91a1f776048c688add172c37fbbd1~mv2.png/v1/fill/w_600,h_450,fp_0.50_0.50,q_90,enc_avif,quality_auto/5eecb7_61c91a1f776048c688add172c37fbbd1~mv2.webp" alt="Bitcoin">
+        <div class="post">
+            <div class="byline">3 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/why-bitcoin-is-not-a-scam-understanding-money-part-1" target="_blank">Why Bitcoin is not a scam - Understanding Money - Part 1</a>
         </div>
 
-        <div class="blog-post">
-            <div class="meta">2 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/chicken-and-egg-solution-for-developing-countries-fighting-poverty" target="_blank">Chicken and Egg Solution for Developing Countries - Fighting Poverty</a></h2>
-            <img src="https://static.wixstatic.com/media/5eecb7_171b937bf8454c7ea366f6dd6746cdd9~mv2.jpg/v1/fill/w_600,h_450,fp_0.50_0.50,q_90,enc_avif,quality_auto/5eecb7_171b937bf8454c7ea366f6dd6746cdd9~mv2.webp" alt="Chickens">
+        <div class="post">
+            <div class="byline">2 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/chicken-and-egg-solution-for-developing-countries-fighting-poverty" target="_blank">Chicken and Egg Solution for Developing Countries - Fighting Poverty</a>
         </div>
 
-        <div class="blog-post">
-            <div class="meta">5 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/decentralised-finance-defi-morpho" target="_blank">How to invest in Decentralised Finance(DeFi)</a></h2>
-            <img src="https://static.wixstatic.com/media/5eecb7_2e06187480164abcab82ebd28cfd974f~mv2.png/v1/fill/w_600,h_450,fp_0.50_0.50,q_90,enc_avif,quality_auto/5eecb7_2e06187480164abcab82ebd28cfd974f~mv2.webp" alt="DeFi">
+        <div class="post">
+            <div class="byline">5 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/decentralised-finance-defi-morpho" target="_blank">How to invest in Decentralised Finance(DeFi)</a>
         </div>
 
-        <div class="blog-post">
-            <div class="meta">3 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/how-to-explain-bitcoin-whitepaper-to-a-8-year-old-kid-part-6-1" target="_blank">How to explain Bitcoin Whitepaper to a 8 year old kid - Part 9</a></h2>
-            <img src="https://static.wixstatic.com/media/5eecb7_279157b0beb74e2c96d8a63fb4da0574~mv2.png/v1/fill/w_600,h_450,fp_0.50_0.50,q_90,enc_avif,quality_auto/5eecb7_279157b0beb74e2c96d8a63fb4da0574~mv2.webp" alt="Bitcoin Whitepaper">
+        <div class="post">
+            <div class="byline">3 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/how-to-explain-bitcoin-whitepaper-to-a-8-year-old-kid-part-6-1" target="_blank">How to explain Bitcoin Whitepaper to a 8 year old kid - Part 9</a>
         </div>
 
-        <div class="blog-post">
-            <div class="meta">2 min read</div>
-            <h2><a href="https://www.samuelkimanisikuku.com/post/how-to-explain-bitcoin-whitepaper-to-a-8-year-old-kid-part-6" target="_blank">How to explain Bitcoin Whitepaper to a 8 year old kid - Part 7</a></h2>
-            <img src="https://static.wixstatic.com/media/5eecb7_b1d1fcf0ee2f44688e38dab37da353e7~mv2.png/v1/fill/w_600,h_450,fp_0.50_0.50,q_90,enc_avif,quality_auto/5eecb7_b1d1fcf0ee2f44688e38dab37da353e7~mv2.webp" alt="Bitcoin">
+        <div class="post">
+            <div class="byline">2 min read</div>
+            <a href="https://www.samuelkimanisikuku.com/post/how-to-explain-bitcoin-whitepaper-to-a-8-year-old-kid-part-6" target="_blank">How to explain Bitcoin Whitepaper to a 8 year old kid - Part 7</a>
         </div>
     </div>
 </body>

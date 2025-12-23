@@ -5,133 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookshelf | Samuel Kimani Sikuku</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #FAFAFA;
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+            font-size: 13px;
             color: #333;
-            line-height: 1.6;
-            padding: 40px 60px;
-        }
-
-        .nav {
-            position: fixed;
-            top: 40px;
-            right: 60px;
-            text-align: right;
-            z-index: 100;
-        }
-
-        .nav .name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .nav a {
-            display: block;
-            color: #0066CC;
-            text-decoration: none;
-            font-size: 15px;
-            margin: 4px 0;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            max-width: 800px;
+            line-height: 18px;
             margin: 0;
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 40px 0 20px 0;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style: none;
             padding: 0;
         }
 
-        li {
-            margin-bottom: 8px;
+        #menu {
+            float: right;
+            margin-top: 30px;
+            margin-right: 20px;
+            text-align: right;
+            width: 150px;
         }
 
-        li::before {
-            content: "•";
-            margin-right: 8px;
+        #menu .title {
+            margin-bottom: 10px;
         }
 
-        a {
-            color: #0066CC;
+        #menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu li a {
+            display: inline-block;
+            color: #0864c7;
+            text-decoration: none;
+        }
+
+        #menu li a:hover {
             text-decoration: underline;
         }
 
-        a:hover {
+        #left {
+            height: 1px;
+            float: left;
+            display: block;
+            min-width: 0;
+            overflow: hidden;
+            width: 200px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            margin-top: 30px;
+            float: left;
+            width: 500px;
+        }
+
+        #content h1 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 0 0 0.5em 0;
+        }
+
+        #content h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 2em 0 1em 0;
+        }
+
+        #content p {
+            margin: 0 0 1em 0;
+        }
+
+        #content ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #content li {
+            margin-bottom: 0.7em;
+        }
+
+        #content a {
+            color: #0864c7;
             text-decoration: none;
+        }
+
+        #content a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 30px;
+            #menu {
+                float: none;
+                width: auto;
+                margin: 20px;
+                text-align: left;
             }
 
-            .nav {
-                position: static;
-                margin-bottom: 40px;
+            #left {
+                display: none;
+            }
+
+            #content {
+                float: none;
+                width: auto;
+                margin: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <div class="name">Samuel Kimani</div>
-        <a href="about.html">About</a>
-        <a href="links.html">Links</a>
-        <a href="blog.html">Blog</a>
-        <a href="travel.html">Travel</a>
-        <a href="people.html">People</a>
-        <a href="bookshelf.html">Bookshelf</a>
+    <div id="menu">
+        <div class="title">Samuel Kimani</div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="travel.html">Travel</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="bookshelf.html">Bookshelf</a></li>
+        </ul>
     </div>
-
-    <div class="content">
+    <div id="left"></div>
+    <div id="content">
         <h1>Bookshelf</h1>
-        <div class="subtitle">📚 My Reading Journey</div>
 
         <p>I recently discovered the joy of reading books. I never quite grasped the importance of reading during my school years, but now, I'm hooked! Starting with novels, I've expanded my horizons to everything.</p>
 
         <p>What drives my reading choices? Two things really:</p>
         <p>First, wanting to improve my communication skills (still a work in progress, slowly getting there!).</p>
 
-        <p>Second, whenever I learn about someone, I dive into their reading lists. I've explored recommendations from individuals like <a href="https://www.linkedin.com/in/john-gachora/" target="_blank">John Gachora</a>, <a href="https://patrickcollison.com/about" target="_blank">Patrick Collison</a>, <a href="https://nav.al" target="_blank">Naval Ravikant</a>, <a href="https://www.chaiwithpabrai.com" target="_blank">Mohnish Pabrai</a>, and <a href="https://en.wikipedia.org/wiki/Chip_Wilson" target="_blank">Chip Wilson</a>, among others.</p>
+        <p>Second, whenever I learn about someone, I dive into their reading lists. I've explored recommendations from individuals like John Gachora, Patrick Collison, Naval Ravikant, Mohnish Pabrai, and Chip Wilson, among others.</p>
 
         <p>I've compiled both my completed reads and my to-read list below.</p>
-        <p>Would love to hear what books have inspired you! Drop me your recommendations 📖✨</p>
+        <p>Would love to hear what books have inspired you! Drop me your recommendations.</p>
 
         <h2>Read</h2>
         <ul>

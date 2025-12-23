@@ -5,207 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Samuel Kimani Sikuku</title>
     <style>
-        * {
+        body {
+            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+            font-size: 13px;
+            color: #333;
+            line-height: 18px;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #FAFAFA;
-            color: #333;
-            line-height: 1.6;
-            padding: 40px 60px;
-        }
-
-        .nav {
-            position: fixed;
-            top: 40px;
-            right: 60px;
+        #menu {
+            float: right;
+            margin-top: 30px;
+            margin-right: 20px;
             text-align: right;
-            z-index: 100;
+            width: 150px;
         }
 
-        .nav .name {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
+        #menu .title {
             margin-bottom: 10px;
         }
 
-        .nav a {
-            display: block;
-            color: #0066CC;
-            text-decoration: none;
-            font-size: 15px;
-            margin: 4px 0;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            max-width: 800px;
+        #menu ul {
+            list-style-type: none;
             margin: 0;
+            padding: 0;
         }
 
-        .profile-section {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: start;
-        }
-
-        .profile-image {
-            width: 200px;
-            height: auto;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        .profile-text h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .profile-text h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .profile-text p {
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-
-        a {
-            color: #0066CC;
-            text-decoration: underline;
-        }
-
-        a:hover {
+        #menu li a {
+            display: inline-block;
+            color: #0864c7;
             text-decoration: none;
         }
 
-        .section {
-            margin-bottom: 40px;
+        #menu li a:hover {
+            text-decoration: underline;
         }
 
-        .section h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
+        #left {
+            height: 1px;
+            float: left;
+            display: block;
+            min-width: 0;
+            overflow: hidden;
+            width: 200px;
+            margin: 0;
+            padding: 0;
         }
 
-        .section h3 {
+        #content {
+            margin-top: 30px;
+            float: left;
+            width: 500px;
+        }
+
+        #content h1 {
             font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: normal;
+            margin: 0 0 1.5em 0;
         }
 
-        .section p, .section ul {
-            font-size: 15px;
-            margin-bottom: 15px;
+        #content h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin: 2em 0 1em 0;
         }
 
-        .section ul {
-            list-style-position: inside;
-            padding-left: 0;
+        #content h3 {
+            font-size: 13px;
+            font-weight: bold;
+            margin: 1.5em 0 0.5em 0;
         }
 
-        .section li {
-            margin-bottom: 5px;
+        #content p {
+            margin: 0 0 1em 0;
         }
 
-        .socials {
-            display: flex;
-            gap: 40px;
-            margin-top: 10px;
+        #content a {
+            color: #0864c7;
+            text-decoration: none;
+        }
+
+        #content a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-img {
+            max-width: 150px;
+            margin-bottom: 1.5em;
+        }
+
+        .socials a {
+            margin-right: 20px;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 30px;
+            #menu {
+                float: none;
+                width: auto;
+                margin: 20px;
+                text-align: left;
             }
 
-            .nav {
-                position: static;
-                margin-bottom: 40px;
+            #left {
+                display: none;
             }
 
-            .profile-section {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .profile-image {
-                width: 150px;
-            }
-
-            .socials {
-                flex-direction: column;
-                gap: 10px;
+            #content {
+                float: none;
+                width: auto;
+                margin: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <div class="name">Samuel Kimani</div>
-        <a href="about.html">About</a>
-        <a href="links.html">Links</a>
-        <a href="blog.html">Blog</a>
-        <a href="travel.html">Travel</a>
-        <a href="people.html">People</a>
-        <a href="bookshelf.html">Bookshelf</a>
+    <div id="menu">
+        <div class="title">Samuel Kimani</div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="travel.html">Travel</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="bookshelf.html">Bookshelf</a></li>
+        </ul>
     </div>
+    <div id="left"></div>
+    <div id="content">
+        <img src="https://static.wixstatic.com/media/5eecb7_3934b76dbdc94bafb1b684bac538af65~mv2.png/v1/fill/w_172,h_165,al_c,q_85,enc_avif,quality_auto/Screenshot%202024-09-12%20172953.png" alt="Samuel Kimani" class="profile-img">
+        
+        <h1>About</h1>
 
-    <div class="content">
-        <div class="profile-section">
-            <div class="profile-image">
-                <img src="https://static.wixstatic.com/media/5eecb7_3934b76dbdc94bafb1b684bac538af65~mv2.png/v1/fill/w_172,h_165,al_c,q_85,enc_avif,quality_auto/Screenshot%202024-09-12%20172953.png" alt="Samuel Kimani">
-            </div>
-            <div class="profile-text">
-                <h2>About</h2>
-                <h3>Learning how to build products</h3>
-                <p>I love working on products.</p>
-                <p>Sometimes it's for money, sometimes it's for fun, most of the time it's both and I'd like to keep it that way.</p>
-                <p>I grew up in <a href="https://en.wikipedia.org/wiki/Turbo,_Kenya" target="_blank">Turbo</a>. I currently live in Paris and work at <a href="https://foundersrc.com/" target="_blank">Founders Running Club</a>. Previously worked at <a href="https://fr.wikipedia.org/wiki/Jumia" target="_blank">Jumia Group</a>.</p>
-                <p>2 times marathon runner with personal best time of 3:05, working to do under 3 hours.</p>
-            </div>
+        <h2>Learning how to build products</h2>
+        
+        <p>I love working on products.</p>
+        
+        <p>Sometimes it's for money, sometimes it's for fun, most of the time it's both and I'd like to keep it that way.</p>
+        
+        <p>I grew up in <a href="https://en.wikipedia.org/wiki/Turbo,_Kenya" target="_blank">Turbo</a>. I currently live in Paris and work at <a href="https://foundersrc.com/" target="_blank">Founders Running Club</a>. Previously worked at <a href="https://fr.wikipedia.org/wiki/Jumia" target="_blank">Jumia Group</a>.</p>
+        
+        <p>2 times marathon runner with personal best time of 3:05, working to do under 3 hours.</p>
+
+        <h2>Area of interest</h2>
+        
+        <h3>Reduce Poverty in Africa.</h3>
+        <p>Working with <a href="https://waveunits.co.ke/index.php" target="_blank">Waveunit</a> to tokenise agriculture in Africa using blockchain technology, we have started with chickens and eggs.</p>
+
+        <h3>Entrepreneurship.</h3>
+        <p>I am a maize farmer. I do logistics services. I use Decentralised platforms to save.</p>
+
+        <h3>Community Building and Marketing.</h3>
+        <p>Working at <a href="https://lemfi.com/en-gb/" target="_blank">Lemfi</a>. Building <a href="https://www.africaglobalforum.com/" target="_blank">Africa Global Forum</a>, <a href="https://chat.whatsapp.com/FukHPhFGsrAJgN0BkN4s4M" target="_blank">Peer2Peer logistics</a> and <a href="https://chat.whatsapp.com/DO2Z6sgoCGqBiLEhVA9Ya9" target="_blank">Content Creators hub</a> communities to create opportunities for Africans living abroad.</p>
+
+        <h2>Socials</h2>
+        <div class="socials">
+            <a href="https://x.com/SKimani544" target="_blank">X</a>
+            <a href="https://www.linkedin.com/in/samuel-kimani-sikuku-4388b610a/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/kimaniruns" target="_blank">Instagram</a>
         </div>
 
-        <div class="section">
-            <h2>Area of interest</h2>
-            
-            <h3>Reduce Poverty in Africa.</h3>
-            <p>Working with <a href="https://waveunits.co.ke/index.php" target="_blank">Waveunit</a> to tokenise agriculture in Africa using blockchain technology, we have started with chickens and eggs.</p>
-
-            <h3>Entrepreneurship.</h3>
-            <p>I am a maize farmer. I do logistics services. I use Decentralised platforms to save.</p>
-
-            <h3>Community Building and Marketing.</h3>
-            <p>Working at <a href="https://lemfi.com/en-gb/" target="_blank">Lemfi</a>. Building <a href="https://www.africaglobalforum.com/" target="_blank">Africa Global Forum</a>, <a href="https://chat.whatsapp.com/FukHPhFGsrAJgN0BkN4s4M" target="_blank">Peer2Peer logistics</a> and <a href="https://chat.whatsapp.com/DO2Z6sgoCGqBiLEhVA9Ya9" target="_blank">Content Creators hub</a> communities to create opportunities for Africans living abroad.</p>
-        </div>
-
-        <div class="section">
-            <h2>Socials</h2>
-            <div class="socials">
-                <a href="https://x.com/SKimani544" target="_blank">X</a>
-                <a href="https://www.linkedin.com/in/samuel-kimani-sikuku-4388b610a/" target="_blank">Linkedin</a>
-                <a href="https://www.instagram.com/kimaniruns" target="_blank">Instagram</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Email</h2>
-            <p><a href="/cdn-cgi/l/email-protection#6310020e16060f4d080a0e020d0a4d100a0816081623040e020a0f4d000c0e"><span class="__cf_email__" d
+        <h2>Email</h2>
+        <p><a href="/cdn-cgi/l/email-protection#2a594b475f4f46044143474b4443045943415f415f6a4d474b434604494547"><span class="
