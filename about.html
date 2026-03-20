@@ -198,6 +198,50 @@
             opacity: 1;
         }
 
+        /* ── Music Button ── */
+        #musicBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        :root[data-theme="light"] #musicBtn {
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+        :root[data-theme="dark"] #musicBtn {
+            background: rgba(40, 40, 40, 0.85);
+            color: #e8e0d4;
+            border: 1px solid #555;
+        }
+
+        #musicBtn:hover {
+            transform: scale(1.1);
+        }
+
+        #musicBtn.playing {
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+            50%       { box-shadow: 0 2px 18px rgba(8, 100, 199, 0.35); }
+        }
+
         @media (max-width: 768px) {
             #menu {
                 float: none;
@@ -220,6 +264,11 @@
                 top: 20px;
                 right: 20px;
             }
+
+            #musicBtn {
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -229,6 +278,14 @@
         <input type="checkbox" id="theme-switch">
         <label for="theme-switch" class="toggle-label" aria-label="Toggle dark mode"></label>
     </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="background.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="musicBtn" title="Toggle music">🎵</button>
 
     <div id="menu">
         <div class="title">Samuel Kimani</div>
@@ -278,10 +335,10 @@
     </div>
 
     <script>
+        // ── Theme Toggle ──
         const toggle = document.getElementById('theme-switch');
         const html = document.documentElement;
 
-        // Load saved preference (or respect OS preference)
         const saved = localStorage.getItem('theme');
         if (saved) {
             html.setAttribute('data-theme', saved);
@@ -295,6 +352,47 @@
             const theme = toggle.checked ? 'dark' : 'light';
             html.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
+        });
+
+        // ── Background Music ──
+        const music = document.getElementById('bgMusic');
+        const btn   = document.getElementById('musicBtn');
+        let playing = false;
+
+        // Restore volume preference
+        music.volume = parseFloat(localStorage.getItem('musicVolume') || '0.35');
+
+        // Auto-start on first user interaction (browsers require this)
+        const startOnInteraction = () => {
+            if (!playing && localStorage.getItem('musicMuted') !== 'true') {
+                music.play().then(() => {
+                    playing = true;
+                    btn.textContent = '🔊';
+                    btn.classList.add('playing');
+                }).catch(() => {});
+            }
+        };
+
+        ['click', 'keydown', 'scroll', 'touchstart'].forEach(evt =>
+            document.body.addEventListener(evt, startOnInteraction, { once: true })
+        );
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // don't trigger startOnInteraction
+            if (playing) {
+                music.pause();
+                playing = false;
+                btn.textContent = '🎵';
+                btn.classList.remove('playing');
+                localStorage.setItem('musicMuted', 'true');
+            } else {
+                music.play().then(() => {
+                    playing = true;
+                    btn.textContent = '🔊';
+                    btn.classList.add('playing');
+                    localStorage.setItem('musicMuted', 'false');
+                }).catch(() => {});
+            }
         });
     </script>
 </body>
