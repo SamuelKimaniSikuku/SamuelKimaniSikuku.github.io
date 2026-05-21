@@ -3,292 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Samuel Kimani Sikuku</title>
-    <style>
-        /* ── Theme Variables ── */
-        :root[data-theme="light"] {
-            --bg: #f5f1eb;
-            --text: #333;
-            --link: #0864c7;
-            --tooltip-bg: #555;
-            --toggle-bg: #ccc;
-            --toggle-knob: #fff;
-            --toggle-bg-active: #333;
-        }
-
-        :root[data-theme="dark"] {
-            --bg: #1a1a1a;
-            --text: #e8e0d4;
-            --link: #6eaaee;
-            --tooltip-bg: #888;
-            --toggle-bg: #555;
-            --toggle-knob: #fff;
-            --toggle-bg-active: #e8e0d4;
-        }
-
-        /* ── Smooth transition on theme change ── */
-        html {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 13px;
-            color: var(--text);
-            background-color: var(--bg);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* ── Toggle Switch ── */
-        .theme-toggle {
-            position: fixed;
-            top: 28px;
-            right: 30px;
-            z-index: 100;
-        }
-
-        .theme-toggle input {
-            display: none;
-        }
-
-        .toggle-label {
-            display: block;
-            width: 48px;
-            height: 26px;
-            background: var(--toggle-bg);
-            border-radius: 26px;
-            cursor: pointer;
-            position: relative;
-            transition: background 0.3s ease;
-        }
-
-        .toggle-label::after {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 20px;
-            height: 20px;
-            background: var(--toggle-knob);
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
-
-        .theme-toggle input:checked + .toggle-label {
-            background: var(--toggle-bg-active);
-        }
-
-        .theme-toggle input:checked + .toggle-label::after {
-            transform: translateX(22px);
-        }
-
-        /* ── Layout ── */
-        #menu {
-            float: right;
-            margin-top: 30px;
-            margin-right: 90px;
-            text-align: right;
-            width: 150px;
-        }
-
-        #menu .title {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        #menu ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #menu li a {
-            display: inline-block;
-            color: var(--link);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        #menu li a:hover {
-            text-decoration: underline;
-        }
-
-        #left {
-            height: 1px;
-            float: left;
-            display: block;
-            min-width: 0;
-            overflow: hidden;
-            width: 200px;
-            margin: 0;
-            padding: 0;
-        }
-
-        #content {
-            margin-top: 30px;
-            float: left;
-            width: 500px;
-        }
-
-        #content p {
-            margin: 0 0 1em 0;
-        }
-
-        #content ul {
-            list-style-type: disc;
-            margin: 0 0 2em 0;
-            padding-left: 20px;
-        }
-
-        #content li {
-            margin-bottom: 1em;
-        }
-
-        #content a {
-            color: var(--link);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        #content a:hover {
-            text-decoration: underline;
-        }
-
-        .profile-img {
-            max-width: 200px;
-            margin-bottom: 1.5em;
-        }
-
-        .section-title {
-            font-weight: bold;
-            margin-top: 2em;
-            margin-bottom: 1em;
-        }
-
-        /* ── Tooltip ── */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: var(--tooltip-bg);
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 12px;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* ── Music Button ── */
-        #musicBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
-
-        :root[data-theme="light"] #musicBtn {
-            background: rgba(255, 255, 255, 0.85);
-            color: #333;
-            border: 1px solid #ccc;
-        }
-
-        :root[data-theme="dark"] #musicBtn {
-            background: rgba(40, 40, 40, 0.85);
-            color: #e8e0d4;
-            border: 1px solid #555;
-        }
-
-        #musicBtn:hover {
-            transform: scale(1.1);
-        }
-
-        #musicBtn.playing {
-            animation: pulse 2.5s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-            50%       { box-shadow: 0 2px 18px rgba(8, 100, 199, 0.35); }
-        }
-
-        @media (max-width: 768px) {
-            #menu {
-                float: none;
-                width: auto;
-                margin: 20px;
-                text-align: left;
-            }
-
-            #left {
-                display: none;
-            }
-
-            #content {
-                float: none;
-                width: auto;
-                margin: 20px;
-            }
-
-            .theme-toggle {
-                top: 20px;
-                right: 20px;
-            }
-
-            #musicBtn {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+    <title>About · Samuel Kimani Sikuku</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
 </head>
 <body>
-    <!-- Dark / Light toggle -->
     <div class="theme-toggle">
         <input type="checkbox" id="theme-switch">
         <label for="theme-switch" class="toggle-label" aria-label="Toggle dark mode"></label>
     </div>
 
-    <!-- Background Music -->
     <audio id="bgMusic" loop>
         <source src="background.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Music Toggle Button -->
     <button id="musicBtn" title="Toggle music">🎵</button>
 
     <div id="menu">
-        <div class="title">Samuel Kimani</div>
+        <span class="title">Samuel Kimani</span>
         <ul>
             <li><a href="about.html">About</a></li>
             <li><a href="links.html">Links</a></li>
@@ -298,102 +36,42 @@
             <li><a href="bookshelf.html">Bookshelf</a></li>
         </ul>
     </div>
-    <div id="left"></div>
+    <div id="left">&nbsp;</div>
     <div id="content">
         <img src="https://static.wixstatic.com/media/5eecb7_3934b76dbdc94bafb1b684bac538af65~mv2.png/v1/fill/w_172,h_165,al_c,q_85,enc_avif,quality_auto/Screenshot%202024-09-12%20172953.png" alt="Samuel Kimani" class="profile-img">
-        
+
         <p>I currently live in Paris and work at <a href="https://foundersrc.com/" target="_blank">Founders Running Club</a>. I grew up in <a href="https://en.wikipedia.org/wiki/Turbo,_Kenya" target="_blank">Turbo</a> and previously worked at <a href="https://fr.wikipedia.org/wiki/Jumia" target="_blank">Jumia Group</a>.</p>
-        
+
         <p>Email: <a href="mailto:samuel.kimani.sikuku@gmail.com">samuel.kimani.sikuku@gmail.com</a>.</p>
 
         <p>Things I'm involved with and areas of interest:</p>
 
         <ul>
-            <li><strong>Economic growth.</strong> <a href="https://lemfi.com/en-gb/" target="_blank">Lemfi</a> is helping Africans send money home affordably.</li>
+            <li><b>Economic growth.</b> <a href="https://lemfi.com/en-gb/" target="_blank">Lemfi</a> is helping Africans send money home affordably.</li>
 
-            <li><strong>Entrepreneurship.</strong> <a href="https://waveunits.co.ke/index.php" target="_blank">Waveunit</a> helps tokenize agriculture in Africa using blockchain technology. Working with farmers to improve agricultural productivity and reduce poverty in Africa.</li>
+            <li><b>Entrepreneurship.</b> <a href="https://waveunits.co.ke/index.php" target="_blank">Waveunit</a> helps tokenize agriculture in Africa using blockchain technology. Working with farmers to improve agricultural productivity and reduce poverty in Africa.</li>
 
-            <li><strong>Community building.</strong> Building <a href="https://www.africaglobalforum.com/" target="_blank">Africa Global Forum</a>, <a href="https://chat.whatsapp.com/FukHPhFGsrAJgN0BkN4s4M" target="_blank">Peer2Peer logistics</a> and <a href="https://chat.whatsapp.com/DO2Z6sgoCGqBiLEhVA9Ya9" target="_blank">Content Creators Circle</a> to create opportunities for Africans living abroad.</li>
+            <li><b>Community building.</b> Building <a href="https://www.africaglobalforum.com/" target="_blank">Africa Global Forum</a>, <a href="https://chat.whatsapp.com/FukHPhFGsrAJgN0BkN4s4M" target="_blank">Peer2Peer logistics</a> and <a href="https://chat.whatsapp.com/DO2Z6sgoCGqBiLEhVA9Ya9" target="_blank">Content Creators Circle</a> to create opportunities for Africans living abroad.</li>
 
-            <li><strong>Buy Me a Book.</strong> <a href="https://www.buymebook.com/buy-me-a-book.html" target="_blank">Buy Me a Book</a> - supporting reading and learning initiatives.</li>
+            <li><b>Buy Me a Book.</b> <a href="https://www.buymebook.com/buy-me-a-book.html" target="_blank">Buy Me a Book</a> — supporting reading and learning initiatives.</li>
 
-            <li><strong>French Naturalization Prep.</strong> <a href="https://prepexamcivique.fr/" target="_blank">PrépExamCivique</a> - helping people prepare for the French naturalization civic exam.</li>
+            <li><b>French Naturalization Prep.</b> <a href="https://prepexamcivique.fr/" target="_blank">PrépExamCivique</a> — helping people prepare for the French naturalization civic exam.</li>
 
-            <li><strong>Running.</strong> 2 times marathon runner with personal best time of 3:05, working to do under 3 hours.</li>
+            <li><b>Running.</b> 2 times marathon runner with personal best time of 3:05, working to do under 3 hours.</li>
         </ul>
 
-        <p class="section-title">Elsewhere</p>
-        <p>
-            <a href="https://x.com/SKimani544" target="_blank">X</a>, 
-            <a href="https://www.linkedin.com/in/samuel-kimani-sikuku-4388b610a/" target="_blank">LinkedIn</a>, 
-            <a href="https://www.instagram.com/kimaniruns" target="_blank">Instagram</a>, 
+        <h3>Elsewhere</h3>
+
+        <p class="notop">
+            <a href="https://x.com/SKimani544" target="_blank">X</a>,
+            <a href="https://www.linkedin.com/in/samuel-kimani-sikuku-4388b610a/" target="_blank">LinkedIn</a>,
+            <a href="https://www.instagram.com/kimaniruns" target="_blank">Instagram</a>,
             <span class="tooltip">
                 <a href="#" onclick="return false;">OnlyFans</a>
                 <span class="tooltiptext">haha got ya!</span>
             </span>.
         </p>
     </div>
-
-    <script>
-        // ── Theme Toggle ──
-        const toggle = document.getElementById('theme-switch');
-        const html = document.documentElement;
-
-        const saved = localStorage.getItem('theme');
-        if (saved) {
-            html.setAttribute('data-theme', saved);
-            toggle.checked = saved === 'dark';
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            html.setAttribute('data-theme', 'dark');
-            toggle.checked = true;
-        }
-
-        toggle.addEventListener('change', () => {
-            const theme = toggle.checked ? 'dark' : 'light';
-            html.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        });
-
-        // ── Background Music ──
-        const music = document.getElementById('bgMusic');
-        const btn   = document.getElementById('musicBtn');
-        let playing = false;
-
-        // Restore volume preference
-        music.volume = parseFloat(localStorage.getItem('musicVolume') || '0.35');
-
-        // Auto-start on first user interaction (browsers require this)
-        const startOnInteraction = () => {
-            if (!playing && localStorage.getItem('musicMuted') !== 'true') {
-                music.play().then(() => {
-                    playing = true;
-                    btn.textContent = '🔊';
-                    btn.classList.add('playing');
-                }).catch(() => {});
-            }
-        };
-
-        ['click', 'keydown', 'scroll', 'touchstart'].forEach(evt =>
-            document.body.addEventListener(evt, startOnInteraction, { once: true })
-        );
-
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // don't trigger startOnInteraction
-            if (playing) {
-                music.pause();
-                playing = false;
-                btn.textContent = '🎵';
-                btn.classList.remove('playing');
-                localStorage.setItem('musicMuted', 'true');
-            } else {
-                music.play().then(() => {
-                    playing = true;
-                    btn.textContent = '🔊';
-                    btn.classList.add('playing');
-                    localStorage.setItem('musicMuted', 'false');
-                }).catch(() => {});
-            }
-        });
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>

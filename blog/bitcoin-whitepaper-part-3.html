@@ -1,62 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Whitepaper Part 3 | Samuel Kimani Sikuku</title>
-    <style>
-        body {
-            font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-            font-size: 13px;
-            color: #333;
-            line-height: 18px;
-            margin: 0;
-            padding: 0;
-        }
-        #menu {
-            float: right;
-            margin-top: 30px;
-            margin-right: 20px;
-            text-align: right;
-            width: 150px;
-        }
-        #menu .title { margin-bottom: 10px; }
-        #menu ul { list-style-type: none; margin: 0; padding: 0; }
-        #menu li a { display: inline-block; color: #0864c7; text-decoration: none; }
-        #menu li a:hover { text-decoration: underline; }
-        #left {
-            height: 1px;
-            float: left;
-            display: block;
-            min-width: 0;
-            overflow: hidden;
-            width: 200px;
-            margin: 0;
-            padding: 0;
-        }
-        #content {
-            margin-top: 30px;
-            float: left;
-            width: 500px;
-        }
-        #content h1 { font-size: 18px; font-weight: normal; margin: 0 0 0.3em 0; }
-        #content .date { font-size: 11px; color: #aaa; margin-bottom: 2em; }
-        #content h2 { font-size: 14px; font-weight: bold; margin: 2em 0 1em 0; }
-        #content p { margin: 0 0 1em 0; }
-        #content ul { margin: 1em 0; padding-left: 20px; }
-        #content li { margin-bottom: 0.5em; }
-        #content a { color: #0864c7; text-decoration: none; }
-        #content a:hover { text-decoration: underline; }
-        @media (max-width: 768px) {
-            #menu { float: none; width: auto; margin: 20px; text-align: left; }
-            #left { display: none; }
-            #content { float: none; width: auto; margin: 20px; }
-        }
-    </style>
+    <title>Bitcoin Whitepaper Part 3 · Samuel Kimani Sikuku</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
 </head>
 <body>
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="toggle-label" aria-label="Toggle dark mode"></label>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="../background.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicBtn" title="Toggle music">🎵</button>
+
     <div id="menu">
-        <div class="title">Samuel Kimani</div>
+        <span class="title">Samuel Kimani</span>
         <ul>
             <li><a href="../about.html">About</a></li>
             <li><a href="../links.html">Links</a></li>
@@ -66,7 +36,7 @@
             <li><a href="../bookshelf.html">Bookshelf</a></li>
         </ul>
     </div>
-    <div id="left"></div>
+    <div id="left">&nbsp;</div>
     <div id="content">
         <h1>How to explain Bitcoin Whitepaper to a 8 year old kid - Part 3</h1>
         <div class="date">2025</div>
@@ -85,5 +55,6 @@
 <p>P.S. The content was assisted by AI</p>
         <p><a href="../blog.html">← Back to all posts</a></p>
     </div>
+    <script src="../site.js"></script>
 </body>
 </html>
