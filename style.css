@@ -159,6 +159,60 @@ body {
   height: auto;
 }
 
+/* ── Collapsible genre sections (bookshelf) ── */
+#content details.genre {
+  border-bottom: 1px solid var(--rule);
+}
+
+#content details.genre > summary {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  padding: 0.85em 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+/* Hide the native disclosure triangle */
+#content details.genre > summary::-webkit-details-marker { display: none; }
+#content details.genre > summary::marker { content: ''; }
+
+/* Custom arrow that rotates when open */
+#content details.genre > summary::before {
+  content: '';
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-right: 8px;
+  border-left: 4px solid var(--muted);
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+#content details.genre[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+#content details.genre > summary:hover {
+  color: var(--link);
+}
+
+#content details.genre > summary .count {
+  margin-left: auto;
+  padding-left: 1em;
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+#content details.genre > ul {
+  margin: 0 0 1.2em 0;
+}
+
 /* ── Bylines / dates / small notes ── */
 #content .date,
 #content .byline,
