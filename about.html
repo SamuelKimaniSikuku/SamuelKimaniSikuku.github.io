@@ -49,7 +49,7 @@
       /* About-page polish: preserve the shared theme and all existing content. */
       body.about-page {
         --about-gutter: clamp(1.5rem, 14.65vw, 12.5rem);
-        font-size: 1rem;
+        font-size: 0.8125rem;
         letter-spacing: 0;
       }
 
@@ -58,7 +58,7 @@
       .about-page #content {
         float: none;
         width: calc(100% - var(--about-gutter) - 13.5rem);
-        max-width: 37.5rem;
+        max-width: 34rem;
         margin: 2rem 0 5rem var(--about-gutter);
         overflow-wrap: anywhere;
       }
@@ -70,29 +70,29 @@
         margin-bottom: 1.5rem;
       }
 
-      .about-page #content p { margin-bottom: 1rem; }
+      .about-page #content p { margin-bottom: 0.75rem; }
 
       .about-page #content ul {
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.25rem;
         padding-left: 1.2rem;
       }
 
       .about-page #content li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.55rem;
         padding-left: 0.15rem;
       }
 
       .about-page #content li:last-child { margin-bottom: 0; }
 
       .about-page #content h3 {
-        font-size: 1rem;
+        font-size: 0.8125rem;
         line-height: 1.5;
         letter-spacing: 0;
-        margin: 2rem 0 0.625rem;
+        margin: 1.5rem 0 0.5rem;
       }
 
       .about-page #content .note {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         color: #6b6b6b;
       }
 
@@ -101,11 +101,11 @@
       .about-page #menu {
         margin-top: 2rem;
         margin-right: 1.5rem;
-        font-size: 0.875rem;
-        line-height: 1.75;
+        font-size: 0.8125rem;
+        line-height: 1.6;
       }
 
-      .about-page #menu .title { margin-bottom: 0.75rem; }
+      .about-page #menu .title { margin-bottom: 0.5rem; }
       .about-page #menu a[aria-current="page"] { font-weight: 600; }
 
       .about-page a {
@@ -134,10 +134,12 @@
       }
 
       @media (max-width: 56rem) {
+        body.about-page { font-size: 0.875rem; }
+
         .about-page #menu {
           float: none;
           width: auto;
-          max-width: 37.5rem;
+          max-width: 34rem;
           margin: 1.5rem auto;
           padding: 0 1.5rem;
           text-align: left;
