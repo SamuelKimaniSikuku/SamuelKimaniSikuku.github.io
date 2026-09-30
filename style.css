@@ -159,6 +159,30 @@ body {
   height: auto;
 }
 
+/* ── Quotes ── */
+#content .quote {
+  margin: 1.8em 0;
+  padding-bottom: 1.8em;
+  border-bottom: 1px solid var(--rule);
+}
+
+#content .quote:last-child {
+  border-bottom: 0;
+}
+
+#content .quote blockquote {
+  margin: 0;
+}
+
+#content .quote p {
+  font-size: 14px;
+  margin-bottom: 0.5em;
+}
+
+#content .quote figcaption {
+  line-height: 1.65;
+}
+
 /* ── Collapsible genre sections (bookshelf) ── */
 #content details.genre {
   border-bottom: 1px solid var(--rule);
