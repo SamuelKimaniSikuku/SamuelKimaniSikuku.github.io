@@ -160,6 +160,12 @@ body {
 }
 
 /* ── Quotes ── */
+@media (min-width: 960px) {
+  #content.quotes-page {
+    width: 560px;
+  }
+}
+
 #content .quote {
   margin: 1em 0;
   line-height: 1.65;
