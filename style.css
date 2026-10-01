@@ -173,6 +173,10 @@ body {
   font-size: inherit;
 }
 
+#content .quote figcaption {
+  white-space: nowrap;
+}
+
 /* ── Collapsible genre sections (bookshelf) ── */
 #content details.genre {
   border-bottom: 1px solid var(--rule);
