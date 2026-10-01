@@ -161,26 +161,16 @@ body {
 
 /* ── Quotes ── */
 #content .quote {
-  margin: 1.8em 0;
-  padding-bottom: 1.8em;
-  border-bottom: 1px solid var(--rule);
-}
-
-#content .quote:last-child {
-  border-bottom: 0;
-}
-
-#content .quote blockquote {
-  margin: 0;
-}
-
-#content .quote p {
-  font-size: 14px;
-  margin-bottom: 0.5em;
-}
-
-#content .quote figcaption {
+  margin: 1em 0;
   line-height: 1.65;
+}
+
+#content .quote blockquote,
+#content .quote p,
+#content .quote figcaption {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
 }
 
 /* ── Collapsible genre sections (bookshelf) ── */
